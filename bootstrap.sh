@@ -18,10 +18,11 @@ ssh-keygen -t dsa -P '' -f /home/vagrant/.ssh/id_dsa
 cat /home/vagrant/.ssh/id_dsa.pub >> /home/vagrant/.ssh/authorized_keys
 chown vagrant /home/vagrant/.ssh/*
 
-cp /vagrant/hadoop-2.2.0.tar.gz /home/vagrant/
-cp /vagrant/starthadoop.sh /home/vagrant/
+wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.2.0/hadoop-2.2.0.tar.gz -O /home/vagrant/hadoop-2.2.0.tar.gz
+#cp /vagrant/hadoop-2.2.0.tar.gz /home/vagrant/
 tar -xzf hadoop-2.2.0.tar.gz
 cp /vagrant/hadoopconfig/* /home/vagrant/hadoop-2.2.0/etc/hadoop/
+cp /vagrant/starthadoop.sh /home/vagrant/
 mv /home/vagrant/hadoop-2.2.0 /usr/local/hadoop
 chown vagrant /usr/local/hadoop 
 mkdir /hadoop

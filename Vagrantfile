@@ -5,12 +5,28 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "precise32"
 
-  config.vm.provision :shell, :path => "bootstrap.sh"
+  config.vm.define "master" do |vmconfig|
+    vmconfig.vm.box="centos63_32"
+    vmconfig.vm.hostname="master"
+    vmconfig.vm.network "private_network", ip: "192.168.56.111"
+    vmconfig.vm.provision :shell, :path => "bootstrap.sh"
+  end
 
-  #config.vm.network :forwarded_port, host: 8088, guest: 8088
-   config.vm.network "public_network"
+  config.vm.define "slave0" do |vmconfig|
+    vmconfig.vm.box="centos63_32"
+    vmconfig.vm.hostname="slave0"
+    vmconfig.vm.network "private_network", ip: "192.168.56.112"
+    vmconfig.vm.provision :shell, :path => "bootstrap_slave.sh"
+  end
+
+  config.vm.define "slave1" do |vmconfig|
+    vmconfig.vm.box="centos63_32"
+    vmconfig.vm.hostname="slave1"
+    vmconfig.vm.network "private_network", ip: "192.168.56.113"
+    vmconfig.vm.provision :shell, :path => "bootstrap_slave.sh"
+  end
+  
 
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,

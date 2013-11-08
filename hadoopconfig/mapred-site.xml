@@ -23,4 +23,10 @@
 <value>yarn</value>
 </property>
 
+<property>
+<name>mapreduce.job.tracker</name>
+<value>hdfs://master:9001</value>
+<final>true</final>
+</property>
+
 </configuration>

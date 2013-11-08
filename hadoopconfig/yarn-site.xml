@@ -17,6 +17,21 @@
 <!-- Site specific YARN configuration properties -->
 
 <property>
+<name>yarn.resourcemanager.address</name>
+<value>master:8080</value>
+</property>
+<property>
+
+<name>yarn.resourcemanager.scheduler.address</name>
+<value>master:8081</value>
+</property>
+<property>
+
+<name>yarn.resourcemanager.resource-tracker.address</name>
+<value>master:8082</value>
+</property>
+
+<property>
 <name>yarn.nodemanager.aux-services</name>
 <value>mapreduce_shuffle</value>
 </property>

@@ -8,6 +8,7 @@ cat /home/vagrant/.ssh/id_dsa.pub >> /home/vagrant/.ssh/authorized_keys
 chown vagrant /home/vagrant/.ssh/*
 
 #cp pubkey to /vagrant then to slave
+rm /vagrant/.ssh -rf
 cp /home/vagrant/.ssh /vagrant/ -r
 
 #install hadoop

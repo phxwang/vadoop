@@ -1,2 +1,3 @@
- /usr/local/hadoop/sbin/start-dfs.sh
- /usr/local/hadoop/sbin/start-yarn.sh
+ start-dfs.sh
+ start-yarn.sh
+ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 3 1000

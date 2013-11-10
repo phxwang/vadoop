@@ -15,4 +15,4 @@ cat /vagrant/bashrc >> /home/vagrant/.bashrc
 chkconfig --level 35 iptables off
 service iptables stop
 
-ln -s /usr/local/hadoop/logs logs
+sudo -u vagrant ln -s /usr/local/hadoop/logs logs

@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |v, override|
     #override.vm.box_url = "http://files.vagrantup.com/lucid64.box"
-    v.customize ["modifyvm", :id, "--memory", "1024"]
+    v.customize ["modifyvm", :id, "--memory", "512"]
   end
 
   config.vm.define :master do |vmconfig|
